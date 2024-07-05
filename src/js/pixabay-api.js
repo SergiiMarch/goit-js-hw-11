@@ -3,7 +3,6 @@ const urlApi = 'https://pixabay.com/api/';
 
 export function fetchImages(query) {
   const url = `${urlApi}?key=${API_KEY}&q=${query}&image_type=foto&orientation=horizontal&safesearch=true`;
-  console.log('Fetching images from URL:', url);
 
   return fetch(url)
     .then(res => {
@@ -13,6 +12,11 @@ export function fetchImages(query) {
 
       return res.json();
     })
-    .then(data => console.log(data.hits))
+    .then(data => {
+      if (!data.hits || data.hits.length === 0) {
+        throw new Error('No images found');
+      }
+      return data.hits; // Повертаємо масив зображень
+    })
     .catch(error => console.log(error));
 }
