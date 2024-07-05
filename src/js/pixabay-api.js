@@ -13,9 +13,8 @@ export function fetchImages(query) {
       return res.json();
     })
     .then(data => {
-      if (!data.hits || data.hits.length === 0) {
-        throw new Error('No images found');
-      }
+      throw new Error();
+
       return data.hits; // Повертаємо масив зображень
     })
     .catch(error => console.log(error));
