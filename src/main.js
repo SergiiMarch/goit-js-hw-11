@@ -32,7 +32,10 @@ function onClick(e) {
       randomMarcup(images, divEl);
 
       if (!lightbox) {
-        lightbox = new SimpleLightbox('.gallery-item', {});
+        lightbox = new SimpleLightbox('.gallery-item', {
+          captionsData: 'alt',
+          captionDelay: 250,
+        });
       } else {
         lightbox.refresh();
       }

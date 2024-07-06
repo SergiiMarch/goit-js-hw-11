@@ -15,14 +15,13 @@ function randomMarcup(images) {
                   <img src="${image.webformatURL}" alt="${image.tags}">
                 </div>
               </a>
-              <div class="card-body">
-                <h5 class="card-title">${image.tags}</h5>
+             
                 <div class="card-text">
                   <p>Likes: ${image.likes}</p>
                   <p>Views: ${image.views}</p>
                   <p>Comments: ${image.comments}</p>
                   <p>Downloads: ${image.downloads}</p>
-                </div>
+               
               </div>
             </div>`;
     galleryMarkup += galleryItem;
