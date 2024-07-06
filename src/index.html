@@ -4,19 +4,16 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <title>Vanilla App Template</title>
   </head>
   <body>
     <load ="partials/header.html" />
-
-    <input
-      class="search search-js"
-      type="text"
-      placeholder="Enter search term"
-    />
-    <button type="submit" class="button button-js">Search</button>
-
-    <div class="js-div"></div>
+    <form id="search-form">
+      <input type="text" class="search-js" placeholder="Search images..." />
+      <button type="submit" class="button-js">Search</button>
+    </form>
+    <div class="js-div gallery"></div>
 
     <script type="module" src="./main.js"></script>
   </body>

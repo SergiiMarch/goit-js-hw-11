@@ -1,7 +1,7 @@
 import { divEl } from '../main';
 
 function clearDivEl() {
-  divEl.innerHTML = ' ';
+  divEl.innerHTML = '';
 }
 
 function randomMarcup(images) {
@@ -9,18 +9,22 @@ function randomMarcup(images) {
   let galleryMarkup = '';
   images.forEach(image => {
     const galleryItem = `
-          <div class="card">
-            <div class="card-img-top">
-              <img src="${image.webformatURL}" alt="${image.tags}" width="360px">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">${image.tags}</h5>
-              <p>Likes: ${image.likes}</p>
-              <p>Views: ${image.views}</p>
-              <p>Comments: ${image.comments}</p>
-              <p>Downloads: ${image.downloads}</p>
-            </div>
-          </div>`;
+            <div class="card">
+              <a href="${image.largeImageURL}" class="gallery-item">
+                <div class="card-img-top">
+                  <img src="${image.webformatURL}" alt="${image.tags}">
+                </div>
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">${image.tags}</h5>
+                <div class="card-text">
+                  <p>Likes: ${image.likes}</p>
+                  <p>Views: ${image.views}</p>
+                  <p>Comments: ${image.comments}</p>
+                  <p>Downloads: ${image.downloads}</p>
+                </div>
+              </div>
+            </div>`;
     galleryMarkup += galleryItem;
   });
   divEl.insertAdjacentHTML('beforeend', galleryMarkup);
