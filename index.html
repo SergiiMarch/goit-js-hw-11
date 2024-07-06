@@ -4,23 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/goit-js-hw-11/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>Vanilla App Template</title>
     <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-8c59ed88.js">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-1cd1f9d9.css">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-95c19660.css">
   </head>
   <body>
     <header class="header">
   <nav class="nav"></nav>
 </header>
 
-
-    <input
-      class="search search-js"
-      type="text"
-      placeholder="Enter search term"
-    />
-    <button type="submit" class="button button-js">Search</button>
-
-    <div class="js-div"></div>
+    <form id="search-form">
+      <input type="text" class="search-js" placeholder="Search images..." />
+      <button type="submit" class="button-js">Search</button>
+    </form>
+    <div class="js-div gallery"></div>
 
     
   </body>
